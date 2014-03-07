@@ -43,29 +43,42 @@
 
 <body>
     <div id='wrapper'>
-        <article class='example' id='tools_demo'>
-            <div class='demo'>
-                <div class='tools'>
-                    <a href='#tools_sketch' data-tool='marker'>Pinceau</a>
-                    <a href='#tools_sketch' data-tool='eraser'>Gomme</a>
+        <article class='info'>
+            <article class='example'>
+                <div class='demo' id='colors_demo'>
+                    <div style="width:800px;height:300px;position:absolute; top:50px;border:1px dotted black;background: url(http://www.elaxis.fr/grumpycat.png) no-repeat center center; z-index:500;pointer-events:none;"></div>
+                    <div class='tools'>
+                        <a href='#colors_sketch' data-download='png' style='float: right; width: 100px;'>Download</a>
+                    </div>
+                    <canvas id='colors_sketch' width='800' height='300' style='z-index:1000;'></canvas>
+                    <script type='text/javascript'>
+                        $(function() {
+                          $.each(['#f00', '#ff0', '#0f0', '#0ff', '#00f', '#f0f', '#000', '#fff'], function() {
+                            $('#colors_demo .tools').append("<a href='#colors_sketch' data-color='" + this + "' style='width: 10px; background: " + this + ";'></a> ");
+                          });
+                          $.each([3, 5, 10, 15], function() {
+                            $('#colors_demo .tools').append("<a href='#colors_sketch' data-size='" + this + "' style='background: #ccc'>" + this + "</a> ");
+                          });
+                          $('#colors_sketch').sketch();
+                        });
+                    </script>
                 </div>
-                <canvas id='tools_sketch' width='800' height='300' style='background: url(http://farm1.static.flickr.com/91/239595759_3c3626b24a_b.jpg) no-repeat center center;'></canvas>
-                <script type='text/javascript'>
-                    $(function() {
-                      $('#tools_sketch').sketch({defaultColor: "#ff0"});
-                    });
-                </script>
-            </div>
-        </article>
-    </div>
-    <script type='text/javascript'>
-        var escapeHTML = function(s) {
+            </article>
+
+<!--<script type='text/javascript'>
+    var escapeHTML = function(s) {
             return s
               .replace(/&/g, '&amp;')
               .replace(/</g, '&lt;')
               .replace(/>/g, '&gt;');
           }
-    </script>
+    
+          $('article.example').each(function() {
+            $(this).append("<pre class='source'></pre>");
+            var html = $(this).find("div.demo").html().replace(/          /g,"");
+            $(this).find("pre.source").html(escapeHTML(html));
+          });
+</script>-->
 </body>
 
 </html>
