@@ -1,0 +1,60 @@
+body {
+    width: 1024px;
+    height: 768px;
+    background-repeat: no-repeat;
+    overflow: hidden;
+}
+#accueil {
+    background-image: url(../img/accueil.png);
+}
+#menu {
+    background-image: url(../img/menu.png);
+}
+#lettres {
+    background-image: url(../img/pageLettres.png);
+}
+#toMenu {
+    position: absolute;
+    width: 1024px;
+    height: 768px;
+}
+a.btnMenu {
+    position: absolute;
+    width: 500px;
+    height: 80px;
+    left: 250px;
+}
+#toAnimaux {
+    top: 220px;
+}
+#toColoriage {
+    top: 330px;
+}
+#toLettres {
+    top: 450px;
+}
+.zoneDrop {
+    width: 100px;
+    height: 100px;
+    background-color: grey;
+    margin-right: 5px;
+    z-index: 1000;
+    /*
+    display:inline-block;*/
+    margin: 5px 5px 5px 5px;
+}
+.btnLettre {
+    width: 60px;
+    height: 60px;
+    color: white;
+    z-index: 2000;
+}
+#conteneurRep {
+    position: fixed;
+    bottom: 0;
+}
+#btnCheck {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+}
